@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <?php
-  console.log("123");
   if(isset($_POST['login'])){
     $user = $_POST["email"];
     $pw = $_POST["password"];
@@ -28,17 +27,23 @@
     function always(){ console.log("Login done"); alert("Login Request done"); }
 
     function login(){
-      $.get("jQuery-and-JavaScript-login.php",
-      $("#loginForm").serialize()).done(success).fail(failure).always(always);
-      return false;
+      if (loginForm.email.value == "user" && loginForm.password.value == "111"){
+        success();
+      }
+      else{
+        failure();
+      }
     }
+    $(document).ready(function(){
+      $("#login").click(login);
+    });
 
 </script>
 </head>
 <body>
 <div class="container">
 <div class="main">
-<form method="post" action="jQuery-and-JavaScript-login.ph" id="loginForm">
+<form method="post" name="loginForm" id="loginForm">
 <h2>Create Login Form Using jQuery</h2>
 <label>Email :</label>
 <input type="text" name="email" id="email">
