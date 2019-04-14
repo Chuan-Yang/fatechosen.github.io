@@ -1,5 +1,5 @@
 <?php
-if ($_GET["email"] === "user" && $_GET["password"] === "password" ){
+if ($_POST["email"] === "user" && $_POST["password"] === "password" ){
   echo "Welcome To Ajax!";
   return;
 }
