@@ -6,7 +6,22 @@
 <link rel="stylesheet" href="css/loginstyle.css"/>
 <!-- Include CSS File Here -->
 <script src="jQuery-and-Javascript-js/jquery-2.0.3.min.js"></script>
-<script type="text/javascript" src="js/login.js"></script>
+<script type="text/javascript">
+  function success(){ console.log("Login OK"); alert("Login Succeeded"); }
+
+      function failure(){console.log("Login Failed");  alert("Login Failed"); }
+
+      function always(){ console.log("Login done"); alert("Login Request done"); }
+
+      function login(){
+        $.get("jQuery-and-JavaScript-login.php",
+         $("#loginForm").serialize()).done(success).fail(failure).always(always);
+        return false;
+      }
+  $(document).ready(function(){
+      $("#login").click(login);
+  });
+</script>
 </head>
 <body>
 <div class="container">
