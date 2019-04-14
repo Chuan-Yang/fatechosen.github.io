@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<?php
+  console.log("123");
+  if(isset($_POST['login'])){
+    $user = $_POST["email"];
+    $pw = $_POST["password"];
+    if ($user == "user" && $pw == "111"){
+      echo("aaaaaa");
+    }
+    echo("bbbbb");
+  }
+?>
 <html>
 <head>
 <title>Login Form Using jQuery - Demo Preview</title>
@@ -24,10 +36,10 @@
 <body>
 <div class="container">
 <div class="main">
-<form class="form" method="post" action="jQuery-and-JavaScript-login.php" id="loginForm">
+<form method="post" action="jQuery-and-JavaScript-login.ph" id="loginForm">
 <h2>Create Login Form Using jQuery</h2>
 <label>Email :</label>
-<input type="text" name="demail" id="email">
+<input type="text" name="email" id="email">
 <label>Password :</label>
 <input type="password" name="password" id="password">
 <input type="button" name="login" id="login" value="Login">

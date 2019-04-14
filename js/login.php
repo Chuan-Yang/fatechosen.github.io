@@ -57,3 +57,6 @@ $msg="<span style='color:red'>Invalid Login Details</span>";
 }
 }
 ?>
+$(document).ready(function(){
+  $("#login").click(login);
+});
