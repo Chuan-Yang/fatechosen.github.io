@@ -6,8 +6,10 @@
     $pw = $_POST["password"];
     if ($user == "user" && $pw == "111"){
       echo("aaaaaa");
+    }else{
+      echo("bbbbb");
     }
-    echo("bbbbb");
+
   }
 ?>
 <html>
