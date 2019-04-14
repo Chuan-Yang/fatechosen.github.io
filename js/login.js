@@ -1,6 +1,3 @@
-
-var email = $("#email").val();
-var password = $("#password").val();
 // Checking for blank fields.
 function success(){ console.log("Login OK"); alert("Login Succeeded"); }
 
