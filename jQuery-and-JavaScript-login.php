@@ -1,6 +1,5 @@
 <?php
-header('Content-type: text/html');
-if ($_GET["user"] === "user" && $_GET["pw"] === "password" ){
+if ($_GET["email"] === "user" && $_GET["password"] === "password" ){
   echo "Welcome To Ajax!";
   return;
 }
