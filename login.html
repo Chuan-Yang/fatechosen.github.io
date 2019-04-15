@@ -43,7 +43,18 @@
 <!-- ============================================================ -->
 
   <script>
-    function success(){ console.log("Login OK"); alert("Login Succeeded"); }
+    function success(){ console.log("Login OK"); alert("Login Succeeded");
+      var radioValue = $("input[name='userType']:checked").val();
+      if (radioValue == "Student"){
+        window.open("index1.html");
+      }else{
+        if ($("#text").val() == "t1"){
+          window.open("index2.html");
+        }else{
+          window.open("index2.html");
+        }
+      }
+    }
 
     function failure(){console.log("Login Failed");  alert("Login Failed"); }
 
@@ -51,7 +62,7 @@
 
     function login(){
       $.get("jQuery-and-JavaScript-login.php",
-       $("#loginForm").serialize()).done(success).fail(failure).always(always);
+       $("#loginForm").serialize()).done(success).fail(failure);
       return false;
     }
 
