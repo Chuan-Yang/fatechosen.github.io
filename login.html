@@ -1,46 +1,25 @@
-<!--
-   Adapted from
-   Book:    jQuery and JavaScript Phrasebook (by Brad Dayley)
-   Example: ch1307.html
--->
+<!DOCTYPE html>
+<?php
+  if(isset($_POST['login'])){
+    $user = $_POST["email"];
+    $pw = $_POST["password"];
+    if ($user == "user" && $pw == "111"){
+      echo("aaaaaa");
+    }else{
+      echo("bbbbb");
+    }
 
+  }
+?>
 <html>
-  <head>
-    <title>jQuery and JavaScript Phrasebook (by Brad Dayley)</title>
-
-    <script type="text/javascript"
-	    src="jQuery-and-JavaScript-js/jquery-2.0.3.min.js">
-    </script>
-
-    <meta name="robots" content="noindex, nofollow">
-  <!-- Include CSS File Here -->
-  <link rel="stylesheet" href="css/loginstyle.css"/>
-  <!-- Include CSS File Here -->
-
-  </head>
-
-  <body>
-    <center> <h1>Login Example</h1> </center>
-
-    <div class="container">
-    <div class="main">
-    <form id="loginForm">
-    <h2>Create Login Form Using jQuery</h2>
-    <label>Username: </label>
-    <input type="text" name="user" /><br>
-
-    <label>Password: </label>
-    <input type="password" name="pw" /><br>
-
-    <input id="login" type="button"  value="Login" name="login"/>
-    </form>
-    </div>
-    </div>
-
-
-<!-- ============================================================ -->
-
-  <script>
+<head>
+<title>Login Form Using jQuery - Demo Preview</title>
+<meta name="robots" content="noindex, nofollow">
+<!-- Include CSS File Here -->
+<link rel="stylesheet" href="css/loginstyle.css"/>
+<!-- Include CSS File Here -->
+<script src="jQuery-and-JavaScript-js\jquery-2.0.3.min.js"></script>
+<script type="text/javascript">
     function success(){ console.log("Login OK"); alert("Login Succeeded"); }
 
     function failure(){console.log("Login Failed");  alert("Login Failed"); }
@@ -48,17 +27,31 @@
     function always(){ console.log("Login done"); alert("Login Request done"); }
 
     function login(){
-      $.get("jQuery-and-JavaScript-login.php",
-       $("#loginForm").serialize()).done(success).fail(failure).always(always);
-      return false;
+      if (loginForm.email.value == "user" && loginForm.password.value == "111"){
+        success();
+      }
+      else{
+        failure();
+      }
     }
-
-// ------------------------------
     $(document).ready(function(){
       $("#login").click(login);
     });
 
 </script>
-<!-- ============================================================ -->
+</head>
+<body>
+<div class="container">
+<div class="main">
+<form method="post" name="loginForm" id="loginForm">
+<h2>Create Login Form Using jQuery</h2>
+<label>Email :</label>
+<input type="text" name="email" id="email">
+<label>Password :</label>
+<input type="password" name="password" id="password">
+<input type="button" name="login" id="login" value="Login">
+</form>
+</div>
+</div>
 </body>
 </html>
